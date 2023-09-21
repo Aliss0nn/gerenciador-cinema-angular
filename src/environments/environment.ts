@@ -1,1 +1,3 @@
-export const environment = {};
+export const environment = {
+  API_TOKEN: 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4ZDY5YWEwNmU1OGRmY2VhODgyMjYzODAzMjQyMjM5MyIsInN1YiI6IjY0Zjc3OTFhZmZjOWRlMDEzOGVhMjYzMiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.bwszqgq1_2H8CdUTB26vLVqFIFkIXzBq_2wMYocMYvY',
+};
