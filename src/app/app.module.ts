@@ -1,24 +1,47 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgOptimizedImage } from '@angular/common'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { NavbarComponent } from './components/navbar/navbar.component';
-import { ListagemFilmesComponent } from './components/listagem-filmes/listagem-filmes.component';
-import { DetalhesFilmesComponent } from './components/detalhes-filmes/detalhes-filmes.component';
+import { NgbModule, NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
+import { NavbarComponent } from './shared/navbar/navbar.component';
+import { HomeComponent } from './pages/home/home.component';
+import { FilmeDetalhesComponent } from './pages/filme-detalhes/filme-detalhes.component';
+import { CardFilmeComponent } from './shared/card-filme/card-filme.component';
+import { PaginationComponent } from './shared/pagination/pagination.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ToastrModule } from 'ngx-toastr';
+import { SafeUrlPipe } from './shared/pipes/safe-url.pipe';
+import { BuscarFilmeComponent } from './shared/buscar-filme/buscar-filme.component';
+import { FormsModule } from '@angular/forms';
+import { FilmePesquisadoComponent } from './pages/filme-pesquisado/filme-pesquisado.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    ListagemFilmesComponent,
-    DetalhesFilmesComponent, 
+    HomeComponent,
+    FilmeDetalhesComponent,
+    CardFilmeComponent,
+    PaginationComponent,  
+    SafeUrlPipe, BuscarFilmeComponent, FilmePesquisadoComponent, 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule,
+    NgbPaginationModule,
+    NgOptimizedImage,
+    FormsModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      timeOut: 5000,
+      positionClass: 'toast-bottom-right',
+      preventDuplicates: true,
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]

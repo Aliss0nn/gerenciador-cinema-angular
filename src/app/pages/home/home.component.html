@@ -1,0 +1,42 @@
+<div class="container d-grid gap-3">
+  <div class="d-grid gap-lg-4 d-md-block ">
+    <button type="button" 
+    class="btn btn-lg text-light btn-lg"
+    id="lblEmAlta" [class.lbl-selecionado]="listagemTipo == 'populares'"
+    (click)="selecionarFilmesPopulares()"
+    role="button"
+    >
+      Filmes em Alta
+    </button>
+<button type="button" 
+class="btn btn-lg text-light btn-lg"
+id="lblEmAlta" [class.lbl-selecionado]="listagemTipo == 'nota'"
+(click)="selecionarFilmesPorNota()"
+role="button"
+>
+Filmes Por Nota
+</button>
+<button type="button" 
+class="btn btn-lg text-light  btn-lg"
+id="lblEmAlta" [class.lbl-selecionado]="listagemTipo == 'favoritos'"
+(click)="selecionarFilmesFavoritos()"
+role="button"
+>
+Filmes Favoritos
+</button>
+  </div>
+  <div>
+    <app-buscar-filme></app-buscar-filme>
+  </div>
+  <div class="row g-3">
+    <div *ngFor="let filme of filmes" class="col-6 col-md-4 col-lg-2">
+      <app-card-filme
+        [filme]="filme"       
+      ></app-card-filme>
+    </div>
+  </div>
+  <div class="d-flex justify-content-center">
+    <app-pagination *ngIf="ehPaginado" (onPaginaSelecionada)="paginaSelecionada($event)" [page]="paginaAtual">     
+    </app-pagination>
+  </div>
+</div>

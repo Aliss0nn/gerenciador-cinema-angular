@@ -1,0 +1,6 @@
+<form class="d-flex" role="search">
+  <input  class="form-control me-2" type="search" [(ngModel)]="titulo" name="titulo" placeholder="Buscar Filme" aria-label="Search"
+  (keydown.enter)="filmePesquisado()">
+  <button class="btn btn-outline-danger" type="submit"
+  (click)="filmePesquisado()">Pesquisar</button>
+</form>

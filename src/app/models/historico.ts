@@ -1,7 +1,7 @@
 export class Historico {
-  historicoFavoritoIDS: string[];
+  historicoFavoritoIDS: number[];
 
-  constructor(historicoFavoritoIDS: string[]){
+  constructor(historicoFavoritoIDS: number[]){
     this.historicoFavoritoIDS = historicoFavoritoIDS;
   }
 }
