@@ -17,10 +17,10 @@ const routes: Routes = [
   path: 'filme-detalhes/:id',
   component: FilmeDetalhesComponent
 },
-// {
-//   path: 'filme-pesquisado',
-//   component: FilmePesquisadoComponent
-// },
+{
+  path: 'filme-pesquisado',
+  component: FilmePesquisadoComponent
+},
 ];
 
 @NgModule({

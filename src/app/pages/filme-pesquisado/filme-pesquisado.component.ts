@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FilmePesquisado } from 'src/app/models/filme-buscado';
 import { FilmeService } from 'src/app/services/filme.service';
 
@@ -9,30 +9,22 @@ import { FilmeService } from 'src/app/services/filme.service';
   styleUrls: ['./filme-pesquisado.component.css']
 })
 export class FilmePesquisadoComponent implements OnInit {
-  filmePesquisado: FilmePesquisado[];
 
-  constructor(
-    private filmeService: FilmeService,
-    private route: ActivatedRoute) {
-    this.filmePesquisado = []
-  }
+  constructor(private filmeService: FilmeService, private router: Router, private route: ActivatedRoute){}
+
+  queryPesquisa: string = ''
+  filmePesquisado: FilmePesquisado[] = []
 
   ngOnInit(): void {
-    this.route.queryParams
-      .subscribe(params => {
-        this.selecionarFilmesDetalhesPorTitulo(params['query']);
-      }
-    );
+    this.route.queryParams.subscribe(param => {
+      this.queryPesquisa = param['query'];
+      this.pesquisarFilmes();
+    })
   }
 
-  selecionarFilmesDetalhesPorTitulo(titulo: string) {  
-    if(titulo == ' ') {
-      this.filmePesquisado = [];
-      return;
-    }
-
-    this.filmeService.selecionarFilmePesquisadoPorTitulo(titulo).subscribe(filmesDetalhes => {
-      this.filmePesquisado = filmesDetalhes;
+  pesquisarFilmes(){
+    this.filmeService.PesquisarFilmes(this.queryPesquisa).subscribe(res => {
+      this.filmePesquisado = this.filmeService.mapearFilmesBusca(res.results);
     });
   }
 }

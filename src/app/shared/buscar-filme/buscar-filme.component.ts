@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-buscar-filme',
@@ -6,16 +7,12 @@ import { Component, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./buscar-filme.component.css']
 })
 export class BuscarFilmeComponent {
-  @Output() onTituloSelecionado: EventEmitter<string>;
-  titulo: string;
+  queryPesquisa: string = '';
 
-  constructor() {
-    this.titulo = '';
-    this.onTituloSelecionado = new EventEmitter();
-  }
+  constructor(private router: Router){}
 
-  filmePesquisado(): void {
-    this.onTituloSelecionado.emit(this.titulo);
-    this.titulo = '';
-  }
+  pesquisarFilmes(){
+      this.router.navigate([`filme-pesquisado`],
+      {queryParams: {query: this.queryPesquisa}})
+    };
 }

@@ -17,6 +17,8 @@ import { SafeUrlPipe } from './shared/pipes/safe-url.pipe';
 import { BuscarFilmeComponent } from './shared/buscar-filme/buscar-filme.component';
 import { FormsModule } from '@angular/forms';
 import { FilmePesquisadoComponent } from './pages/filme-pesquisado/filme-pesquisado.component';
+import { BootstrapIconsModule } from 'ng-bootstrap-icons';
+import { Icons } from 'ng-bootstrap-icons/bootstrap-icons/icons.provider';
 
 @NgModule({
   declarations: [

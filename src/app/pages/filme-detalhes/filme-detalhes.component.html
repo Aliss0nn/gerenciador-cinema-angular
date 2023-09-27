@@ -7,11 +7,11 @@
           <div class="ms-auto text-end">
               <p class="text-light">{{filmeDetalhes.mediaNota}} / 10</p>
               <p class="text-light">{{filmeDetalhes.contagemVotos}} Votos</p>
-              <i id="lblFavorito"
-                  [ngClass]="ehFavorito ? 'bi bi-heart-fill fs-2 text-light' : 'bi bi-heart fs-2 text-light' "
+              <bi id="lblFavorito"
+                  [ngClass]="ehFavorito ? 'bi bi-heart fs-2 text-light' : 'bi bi-heart fs-2 text-light' "
                   role="button" (click)="atualizarFavoritos()"
                   [ngbTooltip]="ehFavorito ? 'retirar dos favoritos' : 'adicionar aos favoritos'" placement="left">
-              </i>
+              </bi>
           </div>
       </div>
 

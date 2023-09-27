@@ -8,7 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
-  "engines": { 
+  "engines": {
     "node": ">=18 <19"
   },
   "private": true,
@@ -24,6 +24,7 @@
     "@ng-bootstrap/ng-bootstrap": "^15.1.1",
     "@popperjs/core": "^2.11.6",
     "bootstrap": "^5.2.3",
+    "ng-bootstrap-icons": "^13.1.2-canary.1",
     "ngx-toastr": "^17.0.2",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",

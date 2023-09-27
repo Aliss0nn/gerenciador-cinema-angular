@@ -1,18 +1,12 @@
-<app-buscar-filme (onTituloSelecionado)="selecionarFilmesDetalhesPorTitulo($event)"></app-buscar-filme>
 <div class="container">
-    <div *ngFor="let filme of filmePesquisado" class="row justify-content-center bg-light rounded-3 my-2 py-2 border border-dark">
-        <div clfilmeBuscaass="col-7 col-md-3 col-lg-2">
-            <img routerLink="/filme-detalhes/{{filme.id}}" role="button"
-                [ngSrc]="'https://image.tmdb.org/t/p/original' + this.filme.poster" class="img-poster img-fluid rounded-3"
-                width="400" height="600" alt="" />
-        </div>
-        <div class="d-grid bg-light gap-2 col-12 col-md col-lg">
-            <a routerLink="/filme-detalhes/{{filme.id}}"
-                class="link-information bg-light text-dark border-bottom p-2 m-1 text-center">
-                {{filme.titulo}}
-            </a>
-            <p class="border-bottom bg-light p-2 m-1">{{filme.descricao}}</p>
-            <p class="p-1 text-start">{{filme.data.split('-')[0]}}</p>
+    <div class="mt-3 p-3 d-flex align-items-center " >
+        <app-buscar-filme></app-buscar-filme>
+    </div>
+   <div class="container mt-3">
+    <div class="row ">
+        <div *ngFor="let filme of filmePesquisado" class="col-6 col-md-4 col-lg-2">
+            <app-card-filme [filme]="filme"></app-card-filme>
         </div>
     </div>
+</div>
 </div>

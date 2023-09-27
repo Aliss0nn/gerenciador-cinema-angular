@@ -132,6 +132,10 @@ export class FilmeService{
     generos: apiGeneros.map(g => g.name)
    }
   }
+  PesquisarFilmes(nomeFilme: string){
+    return this.http.get<any>(`https://api.themoviedb.org/3/search/movie?query=${nomeFilme}`,this.obterHeaderAutorizacao())
+    
+}
 
   private obterHeaderAutorizacao() {
     return {
@@ -168,6 +172,5 @@ export class FilmeService{
    mapearFilmesBusca(obj: any[]): FilmePesquisado[] {
     const filmesMapeados = obj.map(filme => this.mapearFilmePesquisado(filme));
     return filmesMapeados;
-  }
-  
+  }  
 }
