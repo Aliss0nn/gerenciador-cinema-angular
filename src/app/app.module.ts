@@ -19,6 +19,7 @@ import { FormsModule } from '@angular/forms';
 import { FilmePesquisadoComponent } from './pages/filme-pesquisado/filme-pesquisado.component';
 import { BootstrapIconsModule } from 'ng-bootstrap-icons';
 import { Icons } from 'ng-bootstrap-icons/bootstrap-icons/icons.provider';
+import { IconsModule } from './icons/icons.module';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { Icons } from 'ng-bootstrap-icons/bootstrap-icons/icons.provider';
     NgbPaginationModule,
     NgOptimizedImage,
     FormsModule,
-    BrowserAnimationsModule,
+    BrowserAnimationsModule,  
+    IconsModule,
     ToastrModule.forRoot({
       timeOut: 5000,
       positionClass: 'toast-bottom-right',
