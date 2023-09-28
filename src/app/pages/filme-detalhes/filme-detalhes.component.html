@@ -8,7 +8,7 @@
               <p class="text-light">{{filmeDetalhes.mediaNota}} / 10</p>
               <p class="text-light">{{filmeDetalhes.contagemVotos}} Votos</p>
               <button id="lblFavorito" class="btn btn-lg btn-dark"           
-                  [ngClass]="ehFavorito ? 'bi bi-heart fs-2 text-warning' : 'bi bi-heart fs-2 text-warning' "
+                  [ngClass]="ehFavorito ? '' : '' "
                   role="button" (click)="atualizarFavoritos()"
                   [ngbTooltip]="ehFavorito ? 'Retirar Filme dos favoritos' : 'Adicionar Filme aos Favoritos'" placement="left">Favoritar
               </button>          
